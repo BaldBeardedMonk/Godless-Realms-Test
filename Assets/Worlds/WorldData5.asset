@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 321f8b81b9fdb450bbab19cf226e18ac, type: 3}
+  m_Name: WorldData5
+  m_EditorClassIdentifier: 
+  id: 5
+  world_name: Jupiter
+  levelCount: 6
+  levelMap: {fileID: 7312929618706505202, guid: f891db7e9ed534a5db1c24c3ef4fd78d, type: 3}
