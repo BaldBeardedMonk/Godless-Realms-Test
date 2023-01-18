@@ -109,7 +109,7 @@ public class UserDataManager : MonoBehaviour
         });
     }
 
-    void EnableWorlds()
+    public void EnableWorlds()
     {
         worldPanelScript.EnableWorlds();
     }

@@ -7,6 +7,7 @@ TagManager:
   - UserDataManager
   - MainCanvas
   - Levels
+  - WorldPanel
   layers:
   - Default
   - TransparentFX

@@ -8,11 +8,18 @@ using PlayFab.ClientModels;
 public class LevelManager : MonoBehaviour
 {
     GameObject[] LevelButtons;
-    public GameObject RewardPanel;
+  
+    private void Awake()
+    {
+        LevelButtons = new GameObject[transform.childCount];
+        for(int i=0;i<transform.childCount;i++)
+        {
+            LevelButtons[i] = transform.GetChild(i).gameObject;
+        }
+    }
 
     private void OnEnable()
     {
-        LevelButtons = GameObject.FindGameObjectsWithTag("Levels");
         foreach (GameObject G in LevelButtons)
         {
             G.GetComponent<Button>().interactable = false;
@@ -22,9 +29,7 @@ public class LevelManager : MonoBehaviour
 
     void SetLevels()
     {
-        Debug.Log("Selected world is" + GlobalVariables.selectedWorld);
-        Debug.Log("Current world is " + GlobalVariables.currentWorld);
-        if(GlobalVariables.selectedWorld<GlobalVariables.currentWorld)
+        if (GlobalVariables.selectedWorld<GlobalVariables.currentWorld)
         {
             foreach (GameObject G in LevelButtons)
             {
@@ -47,9 +52,9 @@ public class LevelManager : MonoBehaviour
 
     public void OnLevelButtonClick(int levelNo)
     {
+        Debug.Log("Level count is" + GlobalVariables.levelCount);
         if(levelNo==GlobalVariables.currentLevel)
         {
-            //RewardPanel.SetActive(true);
             Debug.Log("RewardGiven");
             GlobalVariables.currentLevel++;
             if (GlobalVariables.currentLevel > GlobalVariables.levelCount)
@@ -66,7 +71,7 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Reward already given");
+            Debug.LogWarning("Reward already given");
         }
     }
 
